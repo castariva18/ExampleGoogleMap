@@ -35,7 +35,8 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
         map.moveCamera(CameraUpdateFactory.newLatLngZoom(bandung, zoomLevel));
         setMapLongClick(map);
     }
-    private void setMapLongClick(GoogleMap map){
+
+    private void setMapLongClick(GoogleMap map) {
         map.setOnMapLongClickListener(new GoogleMap.OnMapLongClickListener() {
             @Override
             public void onMapLongClick(LatLng latLng) {
