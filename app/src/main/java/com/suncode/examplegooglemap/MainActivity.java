@@ -1,7 +1,5 @@
 package com.suncode.examplegooglemap;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 
 import android.os.Bundle;
@@ -32,7 +30,17 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
         map = googleMap;
 
         LatLng bandung = new LatLng(-6.917731498045556, 107.6156894322087);
+        float zoomLevel = 15f;
         map.addMarker(new MarkerOptions().position(bandung).title("Bandung city"));
-        map.moveCamera(CameraUpdateFactory.newLatLng(bandung));
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(bandung, zoomLevel));
+        setMapLongClick(map);
+    }
+    private void setMapLongClick(GoogleMap map){
+        map.setOnMapLongClickListener(new GoogleMap.OnMapLongClickListener() {
+            @Override
+            public void onMapLongClick(LatLng latLng) {
+                map.addMarker(new MarkerOptions().position(latLng));
+            }
+        });
     }
 }
