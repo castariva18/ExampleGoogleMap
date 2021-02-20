@@ -3,6 +3,7 @@ package com.suncode.examplegooglemap;
 import androidx.fragment.app.FragmentActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -41,6 +42,7 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
             @Override
             public void onMapLongClick(LatLng latLng) {
                 map.addMarker(new MarkerOptions().position(latLng));
+                Log.d("LONG", "onMapLongClick: " + latLng.latitude + " - " + latLng.longitude );
             }
         });
     }
