@@ -48,14 +48,14 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
             public void onMapLongClick(LatLng latLng) {
                 map.addMarker(new MarkerOptions().position(latLng));
 
-                Log.d("LONG", "onMapLongClick: " + latLng.latitude + " - " + latLng.longitude );
+                Log.d("LONG", "onMapLongClick: " + latLng.latitude + " - " + latLng.longitude);
 
                 button.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
 
                         //kirim data lokasi ke database
-                        Toast.makeText(MainActivity.this,"Get:" + latLng ,Toast.LENGTH_LONG).show();
+                        Toast.makeText(MainActivity.this, "Get:" + latLng, Toast.LENGTH_LONG).show();
                     }
                 });
             }
